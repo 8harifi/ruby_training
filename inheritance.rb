@@ -24,13 +24,11 @@ class Human
 end
 
 class Student < Human
-    attr_accessor :name, :age, :gender, :grade, :teacher_name
+    attr_accessor :grade, :teacher_name
     def initialize (name, age, gender, grade, teacher_name)
         @grade = grade
         @teacher_name = teacher_name
-        @name = name
-        @age = age
-        @gender = gender
+        super(name, age, gender)
     end
 
     def say_grade ()
@@ -42,13 +40,13 @@ class Student < Human
     end
 end
 
-human1 = Human.new("mohammad", 15, "M")
+human1 = Human.new("8harifi", 20, "M")
 human1.say_hello_to("ali")
 human1.introduce()
 puts human1.name
 
 puts "\n"+('-'*20)+"\n\n"
 
-student1 = Student.new("mohammad", 15, "M", 19, "mr.teacher")
+student1 = Student.new("8harifi", 20, "M", 19, "mr.teacher")
 student1.introduce()
 puts student1.name
